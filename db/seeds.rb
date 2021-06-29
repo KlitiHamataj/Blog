@@ -5,3 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "Cleaning database..."
+
+Post.destroy_all
+
+puts "Database cleaned"
+
+puts "_________________"
+
+puts "Creating new posts..."
+
+10.times do
+  Post.create!(
+    title: Faker::Drone.name,
+    content: Faker::Lorem.sentence(word_count: 20),
+  )
+end
+
+puts "Posts created"
