@@ -1,0 +1,12 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-6 m-auto">
+      <%= simple_form_for @post do |f| %>
+      <%= f.input :title %>
+      <%= f.input :content, as: :text %>
+      <%= f.submit "Add", class: "btn btn-primary" %>
+      <%= f.submit "Cancel", class: "btn btn-danger" %>
+      <% end %>
+    </div>
+  </div>
+</div>

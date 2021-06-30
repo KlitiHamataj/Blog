@@ -4,6 +4,13 @@
 <ul>
   <% @posts.each do |post| %>
     <li><%= link_to post.title, post_path(post) %></li>
+    <%= link_to "View", post_path(post), class: "btn btn-primary" %>
+    <% if current_user == post.user %>
+    <%= link_to "Edit", edit_post_path(post), class: "btn btn-info" %>
+    <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+    <% end %>
   <% end %>
 </ul>
+
+<%= link_to  "Add new post", new_post_path %>
 </div>
